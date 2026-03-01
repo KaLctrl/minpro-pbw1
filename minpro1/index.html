@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Nganu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">{{ brand }}</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item" v-for="menu in menus" :key="menu">
+                    <a class="nav-link" :href="'#' + menu.toLowerCase()">{{ menu }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="hero-section ">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+        <h1 class="display-4 fw-bold">{{ name }}</h1>
+        <p class="lead">{{ tagline }}</p>
+        <a href="#about" class="btn bg-dark mt-3 text-white">Tentang Saya</a>
+    </div>
+</section>
+
+<section id="about" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">About Me</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Deskripsi</h5>
+                <p>{{ about }}</p>
+
+                <h5 class="mt-4">Pengalaman</h5>
+                <ul>
+                    <li v-for="exp in experiences" :key="exp">{{ exp }}</li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h5>Skills</h5>
+                <div v-for="skill in skills" :key="skill.name" class="mb-3">
+                    <label>{{ skill.name }}</label>
+                    <div class="progress">
+                        <div class="progress-bar bg-dark"
+                             :style="{ width: skill.level + '%' }">
+                             {{ skill.level }}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="certificates" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Certificates</h2>
+        <div class="row g-4">
+            <div class="col-md-4" v-for="cert in certificates" :key="cert.title">
+                <div class="card h-100">
+                    <img :src="cert.image" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ cert.title }}</h5>
+                        <p class="card-text">{{ cert.desc }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center py-3 bg-dark text-white">
+    © 2026 - {{ name }}
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<script>
+const { createApp } = Vue
+
+createApp({
+    data() {
+        return {
+            brand: "kal portfolio",
+            name: "Hi, I'm kal",
+            tagline: "Mahasiswa Sistem Informasi | Data & Web Enthusiast",
+            about: "Saya adalah mahasiswa Sistem Informasi yang tertarik pada pengolahan data, sistem informasi, dan pengembangan website.",
+            menus: ["Home", "About", "Certificates"],
+            experiences: [
+                "Analisis Data dengan Python",
+                "Web Development (HTML, CSS, Bootstrap)",
+                "Mini Project Sistem Informasi"
+            ],
+            skills: [
+                { name: "HTML & CSS", level: 85 },
+                { name: "Bootstrap", level: 80 },
+                { name: "Python", level: 70 },
+                { name: "Data Analysis", level: 75 }
+            ],
+            certificates: [
+                {
+                    title: "Data Analysis",
+                    desc: "Pelatihan analisis data menggunakan Python",
+                    image: "d.jpeg"
+                },
+                {
+                    title: "Web Development",
+                    desc: "HTML, CSS, dan Bootstrap",
+                    image: "b.jpeg"
+                },
+                {
+                    title: "Database",
+                    desc: "Fundamental SQL dan Database",
+                    image: "a.jpeg"
+                }
+            ]
+        }
+    }
+}).mount('#app')
+</script>
+
+</body>
+</html>
