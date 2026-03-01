@@ -1,4 +1,4 @@
-# minpro-pwb1# Website Portfolio (HTML, CSS, Bootstrap 5, Vue JS)
+# minpro-pbw1# Website Portfolio (HTML, CSS, Bootstrap 5, Vue JS)
 
 ## Deskripsi Project
 Project ini merupakan website portofolio statis berbasis website yang dibuat untuk memenuhi tugas pengembangan web. Website ini dirancang untuk menampilkan informasi pribadi, kemampuan (skills), dan sertifikat dalam tampilan yang rapi, modern, dan responsif.
@@ -89,5 +89,8 @@ Vue JS digunakan pada project ini untuk:
 - **CSS3** – Styling dan pengaturan tampilan.
 - **Bootstrap 5** – Layouting, Navbar, Grid System, Card, Button, Progress Bar, dan Responsive Design.
 - **Vue JS (CDN)** – Interaktivitas tampilan dan data binding.
-
 ---
+-<img width="1920" height="915" alt="Cuplikan layar 2026-03-01 171723" src="https://github.com/user-attachments/assets/d0120dee-ece1-45e6-8b53-558019ce3b5a" />
+<img width="1920" height="561" alt="Cuplikan layar 2026-03-01 171805" src="https://github.com/user-attachments/assets/326d7615-988f-42aa-81a5-6b5a8538163c" />
+<img width="1920" height="912" alt="Cuplikan layar 2026-03-01 171835" src="https://github.com/user-attachments/assets/492bb9f0-a3c9-4e1e-b02b-c032db3f3c4b" />
+
